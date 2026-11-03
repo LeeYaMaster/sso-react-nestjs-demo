@@ -1,0 +1,59 @@
+:root {
+  --accent: #2563eb;
+  --bg: #0b1220;
+  --card: #111827;
+  --border: #1f2937;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  color: var(--text);
+  background: radial-gradient(1200px 600px at 10% -10%, #1e3a8a55, transparent),
+    radial-gradient(900px 500px at 100% 0%, #0ea5e933, transparent), var(--bg);
+  line-height: 1.5;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; }
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: #0b1220;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+.shell { max-width: 760px; margin: 0 auto; padding: 32px 20px 64px; }
+.top { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; margin-bottom: 20px; }
+.top h1 { margin: 6px 0 4px; font-size: 1.75rem; }
+.badge {
+  display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em;
+  text-transform: uppercase; color: white; background: var(--accent);
+  padding: 3px 8px; border-radius: 999px;
+}
+.muted { color: var(--muted); margin: 0; }
+.nav a { color: #93c5fd; }
+.card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+  padding: 24px; box-shadow: 0 18px 40px rgba(0,0,0,.28);
+}
+.card h2 { margin-top: 0; }
+.btn {
+  appearance: none; border: 0; border-radius: 10px; padding: 10px 16px;
+  background: var(--accent); color: white; font-weight: 600; cursor: pointer;
+  font-size: 0.95rem;
+}
+.btn:hover { filter: brightness(1.08); }
+.btn.secondary { background: #b91c1c; }
+.btn.ghost { background: transparent; border: 1px solid var(--border); color: var(--text); }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.kv { display: grid; grid-template-columns: 120px 1fr; gap: 8px 12px; margin: 0; }
+.kv dt { color: var(--muted); }
+.kv dd { margin: 0; word-break: break-all; }
+.tip {
+  margin-top: 20px; padding: 12px 14px; border-radius: 10px;
+  background: #0b1220; border: 1px dashed #334155; color: #cbd5e1; font-size: 0.92rem;
+}
+.error-box {
+  white-space: pre-wrap; background: #450a0a; color: #fecaca;
+  padding: 12px; border-radius: 8px; overflow: auto;
+}

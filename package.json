@@ -1,0 +1,27 @@
+{
+  "name": "sso-react-nestjs-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Educational SSO demo: NestJS IdP + two React SPAs (OIDC Authorization Code + PKCE)",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n idp,app-a,app-b -c blue,green,magenta \"npm:dev:idp\" \"npm:dev:app-a\" \"npm:dev:app-b\"",
+    "dev:idp": "npm run start:dev -w @sso/idp",
+    "dev:app-a": "npm run dev -w @sso/app-a",
+    "dev:app-b": "npm run dev -w @sso/app-b",
+    "build": "npm run build -w @sso/oidc-client && npm run build -w @sso/idp && npm run build -w @sso/app-a && npm run build -w @sso/app-b",
+    "typecheck": "npm run typecheck -w @sso/oidc-client && npm run typecheck -w @sso/idp && npm run typecheck -w @sso/app-a && npm run typecheck -w @sso/app-b"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "allowScripts": {
+    "esbuild@0.25.12": true
+  }
+}
